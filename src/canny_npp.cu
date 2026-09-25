@@ -71,7 +71,7 @@ bool CannyOnDevice(const uint8_t* host_input, int width, int height,
   NPP_CHECK(nppiFilterCannyBorder_8u_C1R(
       d_input, pitch, roi, offset, d_output, pitch, roi, NPP_FILTER_SOBEL,
       NPP_MASK_SIZE_3_X_3, static_cast<Npp16s>(low_threshold),
-      static_cast<Npp16s>(high_threshold), NPP_NORM_L2,
+      static_cast<Npp16s>(high_threshold), nppiNormL2,
       NPP_BORDER_REPLICATE, d_scratch));
 
   CUDA_CHECK(cudaMemcpy(host_output, d_output, image_size,
