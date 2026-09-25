@@ -20,10 +20,10 @@ struct Image8u {
 // Loads an image from disk and converts it to 8-bit grayscale.
 bool LoadImageGrayscale(const std::string& filepath, Image8u* image);
 
-// Saves an 8-bit grayscale image to disk.
+// Saves an 8-bit grayscale image to disk in PNG format.
 bool SaveImageGrayscale(const std::string& filepath, const Image8u& image);
 
-// Frees host memory allocated for an image.
+// Frees host memory allocated for an image by stb_image or malloc.
 void FreeImage(Image8u* image);
 
 }  // namespace canny_npp
